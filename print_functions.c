@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stddef.h>
 
 /**
 * print_char - check code
@@ -22,6 +23,8 @@ int print_string(va_list str)
 {
 	int i;
 	char *string = va_arg(str, char *);
+	if (string == NULL)
+		string = "(null)";
 
 	for (i = 0; string[i] != '\0'; i++)
 		_putchar(string[i]);

@@ -37,10 +37,13 @@ int _printf(const char *format, ...)
 				j++;
 			}
 		}
-		_putchar(format[i]);
-	i++;
+		if (format[i])
+		{
+			_putchar(format[i]);
+			i++;
+		}
 	}
 	va_end(list);
-	return ((i + j) - 1);
+	return (i + j);
 }
 
