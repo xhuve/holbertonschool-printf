@@ -41,6 +41,6 @@ int _printf(const char *format, ...)
 	i++;
 	}
 	va_end(list);
-	return (i + j);
+	return ((i + j) - 1);
 }
 
