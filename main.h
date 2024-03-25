@@ -4,9 +4,10 @@
 #include <stdarg.h>
 
 /**
+* struct print_list - check code
 *
-*
-*
+* @specifier: char
+* @print_func: func pointer
 */
 typedef struct print_list
 {

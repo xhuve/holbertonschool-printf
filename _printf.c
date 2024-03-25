@@ -3,12 +3,12 @@
 #include <stddef.h>
 
 /**
-* main - check code
+* _printf - check code
 *
-* Return: 0
+* @format: char
+*
+* Return: size
 */
-
-
 int _printf(const char *format, ...)
 {
 	int i = 0, j;
@@ -41,6 +41,6 @@ int _printf(const char *format, ...)
 	i++;
 	}
 	va_end(list);
-	return (0);
+	return (i + j);
 }
 
