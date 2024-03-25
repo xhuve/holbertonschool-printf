@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == "%")
+		if (format[i] == '%')
 		{
 			j = 0;
 			while (prints[j].specifier != '\0')
