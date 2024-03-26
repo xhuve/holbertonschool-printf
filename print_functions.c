@@ -35,3 +35,37 @@ int print_string(va_list str_list)
 
 	return (i);
 }
+
+
+/**
+* number_iteration - printing logic for numbers
+*
+* @n: int
+* @count: int
+* Return: length
+*/
+int number_iteration(int n, int count)
+{
+	if (n == 0)
+		return (0);
+	count++;
+	number_iteration(n / 10, count);
+	_putchar((n % 10) + '0');
+	return (count);
+}
+
+
+/**
+* print_string - check code
+*
+* @str_list: str va_list
+* Return: length
+*/
+int print_number(va_list nr_list)
+{
+	int number = va_arg(nr_list, int);
+
+	return (number_iteration(number, 0));
+}
+
+

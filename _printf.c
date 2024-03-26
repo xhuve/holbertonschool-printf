@@ -67,6 +67,8 @@ int _printf(const char *format, ...)
 	print_list prints[] = {
 		{ "c", print_char },
 		{ "s", print_string },
+		{ "i", print_number },
+		{ "d", print_number },
 		{ NULL, NULL }
 	};
 
