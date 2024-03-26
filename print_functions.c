@@ -51,6 +51,7 @@ int number_iteration(int n, int count)
 	{
 		n = n * -1;
 		_putchar('-');
+		new_count++;
 	}
 	if (n == 0)
 		return (count);
@@ -70,8 +71,8 @@ int number_iteration(int n, int count)
 int print_number(va_list nr_list)
 {
 	int number = va_arg(nr_list, int);
-
-	return (number_iteration(number, 0));
+	int length = number_iteration(number, 0); 
+	return (length);
 }
 
 
