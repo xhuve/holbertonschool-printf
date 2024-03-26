@@ -39,6 +39,7 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == prints[j].specifier[0])
 				{
 					len += prints[j].print_func(list);
+					len++;
 					i += 2;
 					continue;
 				}
