@@ -11,7 +11,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, j;
+	int i, j, len;
 	va_list list;
 
 	print_list prints[] = {
@@ -20,30 +20,42 @@ int _printf(const char *format, ...)
 		{ NULL, NULL }
 	};
 
+	len = 0;
+	i = 0;
+
 	va_start(list, format);
-	while (format[i] != '\0')
+	if (format == NULL)
+		return 0;
+
+	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			j = 0;
 			while (prints[j].specifier != NULL)
 			{
 				if (format[i + 1] == prints[j].specifier[0])
 				{
-					prints[j].print_func(list);
-					i += 2;
-					break;
+					len += prints[j].print_func(list);
+					i += 1;
 				}
 				j++;
 			}
-		}
-		if (format[i])
+		} 
+		else if (format[i] == '%' && format[i + 1] == '%')
 		{
-			_putchar(format[i]);
+			_putchar('%');
+			len += 1;
 			i++;
 		}
+		else
+		{
+			_putchar(format[i]);
+			len += 1;
+		}
+		i++;
 	}
 	va_end(list);
-	return (i + j);
+	return (len);
 }
 
