@@ -25,9 +25,7 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	if (format == NULL)
-	{
-		return (0);
-	}
+		return (len);
 
 	while (format != NULL && format[i] != '\0')
 	{
