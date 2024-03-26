@@ -15,9 +15,9 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	print_list prints[] = {
-		{ 'c', print_char },
-		{ 's', print_string },
-		{ '\0', '\0' }
+		{ "c", print_char },
+		{ "s", print_string },
+		{ NULL, NULL }
 	};
 
 	va_start(list, format);
@@ -26,9 +26,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			j = 0;
-			while (prints[j].specifier != '\0')
+			while (prints[j].specifier != NULL)
 			{
-				if (format[i + 1] == prints[j].specifier)
+				if (format[i + 1] == prints[j].specifier[0])
 				{
 					prints[j].print_func(list);
 					i += 2;

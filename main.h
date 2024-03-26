@@ -11,15 +11,15 @@
 */
 typedef struct print_list
 {
-	char specifier;
-	int (*print_func)(va_list);
+	char *specifier;
+	int (*print_func)(va_list list);
 } print_list;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 
-int print_char(va_list ch);
-int print_string(va_list str);
+int print_char(va_list char_list);
+int print_string(va_list str_list);
 
 
 #endif
