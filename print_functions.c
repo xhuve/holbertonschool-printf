@@ -43,15 +43,16 @@ int print_string(va_list str_list)
 * @n: int
 * @count: int
 * Return: length
-*/
+*/ 
 int number_iteration(int n, int count)
 {
+	int new_count;
 	if (n == 0)
-		return (0);
-	count++;
-	number_iteration(n / 10, count);
+		return (count);
+
+	new_count = number_iteration(n / 10, count + 1);
 	_putchar((n % 10) + '0');
-	return (count);
+	return new_count;
 }
 
 
