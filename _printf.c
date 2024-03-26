@@ -44,18 +44,22 @@ int _printf(const char *format, ...)
 				j++;
 			}
 			if (!isConversion)
+			{
 				_putchar(format[i]);
+				len++;
+			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%');
 			i++;
+			len++;
 		}
 		else
 		{
+			len++;
 			_putchar(format[i]);
 		}
-		len++;
 		i++;
 	}
 	va_end(list);
