@@ -25,7 +25,10 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	if (format == NULL)
-		return 1;
+	{
+		_putchar("");
+		return (0);
+	}
 
 	while (format != NULL && format[i] != '\0')
 	{
@@ -41,7 +44,7 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
-		} 
+		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%');
