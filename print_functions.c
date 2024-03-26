@@ -5,7 +5,7 @@
 /**
 * print_char - check code
 *
-* @ch: char va_list
+* @char_list: char va_list
 * Return: 1.
 */
 int print_char(va_list char_list)
@@ -18,15 +18,15 @@ int print_char(va_list char_list)
 /**
 * print_string - check code
 *
-* @str: str va_list
+* @str_list: str va_list
 * Return: length
 */
-int print_string(va_list str)
+int print_string(va_list str_list)
 {
 	int i;
 	char *string;
 
-	string = va_arg(str, char *);
+	string = va_arg(str_list, char *);
 	if (string == NULL)
 		string = "(null)";
 
