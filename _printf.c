@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	len = 0;
 	i = 0;
 	isConversion = 0;
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	va_start(list, format);
@@ -41,14 +41,10 @@ int _printf(const char *format, ...)
 					i++;
 					isConversion++;
 				}
-				if (format[i] == '%' && format[i + 1] == '\0')
-					isConversion++;
 				j++;
 			}
 			if (!isConversion)
-			{
 				_putchar(format[i]);
-			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
