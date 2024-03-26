@@ -46,7 +46,7 @@ int print_string(va_list str_list)
 */ 
 int number_iteration(int n, int count)
 {
-	int new_count;
+	int new_count = 0;
 	if (n < 0)
 	{
 		n = n * -1;
