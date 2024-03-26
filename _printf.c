@@ -39,9 +39,7 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == prints[j].specifier[0])
 				{
 					len += prints[j].print_func(list);
-					len--;
-					i += 2;
-					continue;
+					i += 1;
 				}
 				j++;
 			}
@@ -50,12 +48,15 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			len += 1;
+			i++;
 		}
-		_putchar(format[i]);
-		len += 1;
+		else
+		{
+			_putchar(format[i]);
+			len += 1;
+		}
 		i++;
 	}
 	va_end(list);
 	return (len);
 }
-
