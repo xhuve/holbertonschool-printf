@@ -47,10 +47,15 @@ int print_string(va_list str_list)
 int number_iteration(int n, int count)
 {
 	int new_count;
+	if (n < 0)
+	{
+		n = n * -1;
+		_putchar('-');
+	}
 	if (n == 0)
 		return (count);
-
 	new_count = number_iteration(n / 10, count + 1);
+	
 	_putchar((n % 10) + '0');
 	return new_count;
 }
