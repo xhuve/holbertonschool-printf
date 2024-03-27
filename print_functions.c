@@ -50,9 +50,10 @@ int number_iteration(int n, int count)
 	if (n < 0)
 	{
 		n = n * -1;
+		count += 1;
 		_putchar('-');
-		new_count++;
 	}
+
 	if (n == 0)
 		return (count);
 	new_count = number_iteration(n / 10, count + 1);
