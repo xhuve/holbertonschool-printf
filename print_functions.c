@@ -50,7 +50,7 @@ int number_iteration(int n, int count)
 	if (n < 0)
 	{
 		n = n * -1;
-		count += 1;
+		count++;
 		_putchar('-');
 	}
 
@@ -71,8 +71,13 @@ int number_iteration(int n, int count)
 */
 int print_number(va_list nr_list)
 {
+	int length = 0;
 	int number = va_arg(nr_list, int);
-	int length = number_iteration(number, 0); 
+	if (number == 0)
+		_putchar('0');
+	else
+		length = number_iteration(number, 0); 
+
 	return (length);
 }
 
