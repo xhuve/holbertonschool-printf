@@ -72,7 +72,7 @@ int number_iteration(long int n, int count)
 */
 int print_number(va_list nr_list)
 {
-	int length = 0;
+	int length = 1;
 	int number = va_arg(nr_list, int);
 
 	if (number == 0)
