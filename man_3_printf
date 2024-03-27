@@ -1,0 +1,22 @@
+.TH _printf "March 2024" 
+
+.SH NAME
+_printf \- A simple implementation of the printf function
+
+.SH SYNOPSIS
+.B _printf
+[\fIoptions\fR] \fIformat - Text you want to print\fR
+
+.SH DESCRIPTION
+This is a simple implementation of the printf function provided in the stdio.h library of the C programming language.
+It takes multiple arguments, the first is the string you want to print to the stdout, and the rest can be variables you want to insert
+into the string without explicitly mentioning them. You do this by typing % and the variable type that you want to insert.
+
+.SH EXAMPLES
+_printf("This is a simple sentence.");
+
+_printf("This is %c simple sentence", 'a');
+
+_printf("I have %d apples and %i pears. How %s will i arrive home?", 5, 12, "fast");
+
+
