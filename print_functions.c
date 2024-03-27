@@ -43,10 +43,11 @@ int print_string(va_list str_list)
 * @n: int
 * @count: int
 * Return: length
-*/ 
+*/
 int number_iteration(long int n, int count)
 {
 	int new_count = 0;
+
 	if (n < 0)
 	{
 		n = n * -1;
@@ -57,26 +58,27 @@ int number_iteration(long int n, int count)
 	if (n == 0)
 		return (count);
 	new_count = number_iteration(n / 10, count + 1);
-	
+
 	_putchar((n % 10) + '0');
-	return new_count;
+	return (new_count);
 }
 
 
 /**
-* print_string - check code
+* print_number - check code
 *
-* @str_list: str va_list
+* @nr_list: nr va_list
 * Return: length
 */
 int print_number(va_list nr_list)
 {
 	int length = 0;
 	int number = va_arg(nr_list, int);
+
 	if (number == 0)
 		_putchar('0');
 	else
-		length = number_iteration(number, 0); 
+		length = number_iteration(number, 0);
 
 	return (length);
 }
