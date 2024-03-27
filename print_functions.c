@@ -44,7 +44,7 @@ int print_string(va_list str_list)
 * @count: int
 * Return: length
 */ 
-int number_iteration(int n, int count)
+int number_iteration(long int n, int count)
 {
 	int new_count = 0;
 	if (n < 0)
